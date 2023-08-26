@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>,
+    <script type="module" src="js/index.js" defer></script>
+    <title>Controle Financeiro</title>
+</head>
+
+<body>
+    <main>
+        <div style="width: 600px;">
+            <section class="top-card">
+                <h1>Carteira</h1>
+                <p id="total-value">R$0</p>
+                <div>
+                    <div>
+                        <span class="material-symbols-outlined seta" style="color: #10b810;">
+                            arrow_upward
+                        </span>
+                        <p>Receitas <br><span id="total-incomes">R$0</span></p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined seta" style="color: #ff0000;">
+                            arrow_downward
+                        </span>
+                        <p>Despesas <br> <span id="total-expanses">R$0</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="transactions">
+            </section>
+        </div>
+
+        <div id="chart-container">
+            <canvas id="chart"></canvas>
+            <canvas id="category-chart"></canvas>
+        </div>
+        
+        <button id="btn-new-transaction">
+            <span class="material-symbols-outlined">
+                add
+            </span>
+        </button>
+
+        <dialog>
+            <h1>Nova Transação</h1>
+
+            <div id="inputs-radios">
+                <div>
+                    <label>Receitas</label>
+                    <input type="radio" name="tipo-transacao" value="receita">
+                </div>
+                <div>
+                    <label>Despesas</label>
+                    <input type="radio" name="tipo-transacao" value="despesa">
+                </div>
+            </div>
+
+            <input type="number" placeholder="Valor" id="input-trasaction-value" class="input-text">
+            <input type="text" placeholder="Nome da Transação" id="input-trasaction-name" class="input-text">
+            <input type="text" placeholder="Categoria" id="input-trasaction-category" class="input-text">
+            <div>
+                <button id="cancel-transaction">Cancelar</button>
+                <button id="add-transaction">Adicionar</button>
+            </div>
+        </dialog>
+
+    </main>
+</body>
+
+</html>
